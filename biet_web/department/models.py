@@ -236,7 +236,14 @@ class computer_science_dept_major_equipments(models.Model):
 
 class computer_science_dept_activities(models.Model):
     activity_description = models.TextField()
-    activity_type = models.CharField(max_length=500,choices=(('RE','Regular Event'),('STC','Short-term Course')),default='Regular Event')
+    activity_type = models.CharField(max_length=500,choices=(('RE','Regular Event'),('STC','Short-term Course')),default='RE')
     
     def __str__(self):
         return self.activity_description[:30] + "..."
+        
+class computer_science_dept_achievements(models.Model):
+    achievement_description = models.TextField()
+    achievement_type = models.CharField(max_length=500,choices=(('STUDENT','Student Achievement'),('STAFF','Staff Achievement')),default='STAFF')
+    
+    def __str__(self):
+        return self.achievement_description[:50] + "..."

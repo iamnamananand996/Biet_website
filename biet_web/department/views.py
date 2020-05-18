@@ -7,11 +7,15 @@ from .models import chemistry_dept_gallery, computer_science_dept_gallery, elect
 from .models import electrical_and_electronics_gallery, information_science_dept_gallery, mathematics_dept_gallery
 from .models import physics_dept_gallery, textile_dept_gallery, mca_dept_gallery, environmental_dept_gallery
 from .models import computer_science_dept_lab_facilities, computer_science_dept_major_equipments, computer_science_dept_activities
+from .models import computer_science_dept_achievements
 
 # Create your views here.
 def achievements(request,course,dept):
     print(dept,course)
-    return render(request,'department/'+course+'/'+ dept +'/achievements.html')
+    
+    achievements_data = computer_science_dept_achievements.objects.all()
+    
+    return render(request,'department/'+course+'/'+ dept +'/achievements.html',{'achievements_data': achievements_data})
 
 def activities(request,course,dept):
     print(dept)
