@@ -6,7 +6,7 @@ from .models import civil_depatment_gallery, mechanical_dept_gallery, biotechnol
 from .models import chemistry_dept_gallery, computer_science_dept_gallery, electronics_and_communication_gallery
 from .models import electrical_and_electronics_gallery, information_science_dept_gallery, mathematics_dept_gallery
 from .models import physics_dept_gallery, textile_dept_gallery, mca_dept_gallery, environmental_dept_gallery
-from .models import computer_science_dept_lab_facilities
+from .models import computer_science_dept_lab_facilities, computer_science_dept_major_equipments
 
 # Create your views here.
 def achievements(request,course,dept):
@@ -96,8 +96,10 @@ def infrastructure(request,course,dept):
     print(dept)
     
     lab_facilities_data = computer_science_dept_lab_facilities.objects.all().order_by('sno')
+    major_equipments_data = computer_science_dept_major_equipments.objects.all()
     
-    return render(request,'department/'+course+'/'+ dept +'/infrastructure.html',{'lab_facilities_data' : lab_facilities_data})
+    return render(request,'department/'+course+'/'+ dept +'/infrastructure.html',{'lab_facilities_data' : lab_facilities_data, 
+                                                                                    'major_equipments_data' : major_equipments_data})
 
 def profile(request,course,dept):
     print(dept)

@@ -227,4 +227,9 @@ class computer_science_dept_lab_facilities(models.Model):
     
     def __str__(self):
         return self.name
+        
+class computer_science_dept_major_equipments(models.Model):
+    equipment_description = models.TextField()
 
+    def __str__(self):
+        return self.equipment_description[:50] + "..."
