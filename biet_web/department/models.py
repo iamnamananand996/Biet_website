@@ -233,3 +233,10 @@ class computer_science_dept_major_equipments(models.Model):
 
     def __str__(self):
         return self.equipment_description[:50] + "..."
+
+class computer_science_dept_activities(models.Model):
+    activity_description = models.TextField()
+    activity_type = models.CharField(max_length=500,choices=(('RE','Regular Event'),('STC','Short-term Course')),default='Regular Event')
+    
+    def __str__(self):
+        return self.activity_description[:30] + "..."

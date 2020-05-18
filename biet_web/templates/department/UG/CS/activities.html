@@ -45,22 +45,15 @@
                                                             <p>The following events are conducted regularly by UniCS:</p>
 
                                                             <ul class="custom-list-style medical">
-                                                                <li><i class="fa fa-star"></i>Student's Cricket Contest "BPL (BIET Premier League)".</li>
-                                                                <br>
-                                                                <li><i class="fa fa-star"></i>"C-Quest"- A programming contest.</li>
-                                                                <br>
-                                                                <li><i class="fa fa-star"></i>Various events for girls on account of Women's Day.</li>
-                                                                <br>
-                                                                <li><i class="fa fa-star"></i>DB-2 Certification Course by IBM Corp. India.</li>
-                                                                <br>
-                                                                <li><i class="fa fa-star"></i>Aspirations 2020 by Infosys Ltd.</li>
-                                                                <br>
-                                                                <li><i class="fa fa-star"></i>Rational Functional Tester[RFT] and Rational Application Developer Tool[RAD]- Certification Course by IBM Corp. India.</li>
-                                                                <br>
-                                                                <li><i class="fa fa-star"></i>Soft Skills and Foundation Training Programme under Infosys Campus Connect.</li>
-                                                                <br>
-                                                            </ul>
 
+                                                                {% for activity in activities_data %}
+                                                                    {% if activity.activity_type == "RE" %}
+                                                                        <li><i class="fa fa-star"></i>{{activity.activity_description}}</li>
+                                                                        <br>
+                                                                    {% endif %}
+                                                                {% endfor %}
+
+                                                            </ul>
 
                                                         </article><!--//page-content-->
                                                 
@@ -80,16 +73,14 @@
                                                     <div class="row page-row">
                                                         <article class="welcome col-md-8 col-sm-7">        
                                                             <ul class="custom-list-style medical">
-                                                                <li><i class="fa fa-star"></i>DB-2 Certification Course by IBM Corp. India</li>
-                                                                <br>
-                                                                <li><i class="fa fa-star"></i>Aspirations 2020 by Infosys Ltd.</li>
-                                                                <br>
-                                                                <li><i class="fa fa-star"></i>Rational Functional Tester[RFT] and Rational Application Developer Tool[RAD]- Certification Course by IBM Corp. India</li>
-                                                                <br>
-                                                                <li><i class="fa fa-star"></i>”LOTUS” Certification Course</li>
-                                                                <br>
-                                                                <li><i class="fa fa-star"></i>RAD (Rapid Application Development).</li>
-                                                                <br>
+
+                                                                {% for activity in activities_data %}
+                                                                    {% if activity.activity_type == "STC" %}
+                                                                        <li><i class="fa fa-star"></i>{{activity.activity_description}}</li>
+                                                                        <br>
+                                                                    {% endif %}
+                                                                {% endfor %}
+
                                                             </ul>
 
 
